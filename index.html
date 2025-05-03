@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillFile Bundles</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Custom Script -->
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">SkillFile Bundles</h1>
+            <div class="flex items-center gap-6">
+                <a href="#" class="text-gray-600 hover:text-gray-800">Home</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800">Products</a>
+                <div class="relative cursor-pointer">
+                    <i class="fas fa-shopping-cart text-xl text-gray-600 hover:text-gray-800"></i>
+                    <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pt-20 pb-12">
+        <!-- Sale Banner -->
+        <div class="bg-gradient-to-r from-yellow-100 to-yellow-50 text-center py-3 mb-8 rounded-lg shadow-sm">
+            <p class="text-yellow-800 font-medium">⌛️ Sale ended ⌛️</p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Product cards will be added here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 hidden z-50" id="cartModal">
+        <div class="bg-white w-full max-w-md mx-auto mt-20 rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-4">Cart</h2>
+                <div class="text-center py-8">
+                    <i class="fas fa-shopping-cart text-6xl text-gray-300 mb-4 block"></i>
+                    <p class="text-gray-600 mb-2">Your cart is empty!</p>
+                    <p class="text-gray-400">Add products to your cart to be able to checkout</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <h3 class="text-xl font-bold mb-4">Contact SkillFile Store</h3>
+                    <div class="flex items-center justify-center gap-6">
+                        <a href="mailto:hemantebiz@gmail.com" class="text-gray-600 hover:text-gray-800 flex items-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            hemantebiz@gmail.com
+                        </a>
+                        <a href="tel:+918756598983" class="text-gray-600 hover:text-gray-800 flex items-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            +91 8756598983
+                        </a>
+                    </div>
+                </div>
+                <div class="text-sm text-gray-500 text-center space-y-4">
+                    <div class="pb-4 border-b">
+                        <h4 class="font-semibold text-gray-700 mb-2">Terms and conditions</h4>
+                        <p>You agree to share information entered on this page with SkillFile Store (owner of this page) and Cosmofeed, adhering to applicable laws.</p>
+                    </div>
+                    <p class="text-blue-600 hover:text-blue-700 cursor-pointer">Already made a payment on this page? Sign in to view details</p>
+                    <div class="pt-4 border-t">
+                        <h4 class="font-semibold text-gray-700 mb-2">Disclaimer</h4>
+                        <p>Cosmofeed Technologies Pvt. Ltd. shall not be held liable for any content or materials published, sold, or distributed by content creators on our associated apps or websites.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+</create_file>
+
+2. Now, let's create the custom CSS file:
+
+<create_file>
+<path>styles.css</path>
+<content>
+/* Custom styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.product-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.discount-badge {
+    background: linear-gradient(45deg, #ff6b6b, #ff8787);
+}
+
+/* Cart modal animation */
+.modal-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 200ms, transform 200ms;
+}
+
+.modal-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 200ms, transform 200ms;
+}
